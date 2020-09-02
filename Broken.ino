@@ -7,13 +7,14 @@ void setup()
   pinMode(LED_OUTPUT, OUTPUT);
   digitalWrite(LED_OUTPUT,0)
 }
-void loop() 
+void loop(int time) 
 {
   int buttonState = digitalReadButton();
   Serial.printline(buttonState);
   if(buttonState = 1)
-    digitalWriteLED("1")
+    digitalWrite(LED_OUTPUT, 1);
   else
-    digitalWrite(ZERO)
-  delay("100.5");  
+    digitalWrite(LED_OUTPUT, ZERO);
+  Serial.println(“Time is “ + time);
+  delay(“100.75”);
 }
